@@ -1,23 +1,61 @@
-# Starter Code for Hangman Game Assignment
+"""Starter implementation for the Hangman game.
+
+This file provides a clear, readable starting point for students.
+Modify or extend functions to meet assignment requirements.
+"""
 
 import random
+from typing import List
 
-# List of possible words
-words = ['python', 'hangman', 'challenge', 'programming', 'computer']
 
-# TODO: Randomly select a word from the list
-# secret_word = ...
+WORDS = ['python', 'hangman', 'challenge', 'programming', 'computer']
 
-# TODO: Initialize variables for game state
-# guessed_letters = ...
-# incorrect_guesses = ...
-# max_incorrect = ...
 
-# TODO: Main game loop
-# while ...:
-#     # Display current progress
-#     # Get user input
-#     # Check guess and update state
-#     # Display result or end game
+def choose_word(words: List[str]) -> str:
+	return random.choice(words)
 
-# TODO: Print win/lose message
+
+def display_progress(secret: str, guessed: set) -> str:
+	return ' '.join([c if c in guessed else '_' for c in secret])
+
+
+def is_word_guessed(secret: str, guessed: set) -> bool:
+	return all(c in guessed for c in secret)
+
+
+def main():
+	secret = choose_word(WORDS)
+	guessed = set()
+	incorrect = set()
+	max_incorrect = 6
+
+	print("Welcome to Hangman! Guess letters to reveal the word.")
+
+	while len(incorrect) < max_incorrect and not is_word_guessed(secret, guessed):
+		print('\nWord: ', display_progress(secret, guessed))
+		print(f"Incorrect guesses: {len(incorrect)}/{max_incorrect}")
+		guess = input('Enter a single letter: ').strip().lower()
+		if not guess or len(guess) != 1 or not guess.isalpha():
+			print('Please enter a single alphabetic character.')
+			continue
+		if guess in guessed or guess in incorrect:
+			print('You already tried that letter.')
+			continue
+
+		if guess in secret:
+			guessed.add(guess)
+			print('Good guess!')
+		else:
+			incorrect.add(guess)
+			print('Wrong guess.')
+
+	print('\nFinal word: ', secret)
+	if is_word_guessed(secret, guessed):
+		print('Congratulations — you guessed the word!')
+	else:
+		print('Out of attempts. Better luck next time!')
+
+
+if __name__ == '__main__':
+	main()
+
