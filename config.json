@@ -79,5 +79,25 @@
         }
       ]
     }
+    ,
+    {
+      "id": "python-text-processing",
+      "title": "Python Text Processing",
+      "description": "문자열 처리, 파일 I/O, 단어 빈도 계산 및 텍스트 변환 연습",
+      "path": "assignments/python-text-processing",
+      "dueDate": "2026-07-15",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter-code.py",
+          "type": "python"
+        },
+        {
+          "name": "Sample Text",
+          "file": "sample.txt",
+          "type": "txt"
+        }
+      ]
+    }
   ]
 }

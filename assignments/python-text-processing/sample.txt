@@ -1,0 +1,5 @@
+This is a sample text file for the Python Text Processing assignment.
+
+It includes a few repeated words to demonstrate counting and replacement. The quick brown fox jumps over the lazy dog.
+
+Sample text: Python, python, PYTHON! Are we counting words properly? Let's test: test, test, testing.
