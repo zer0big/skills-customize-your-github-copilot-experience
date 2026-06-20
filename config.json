@@ -99,5 +99,25 @@
         }
       ]
     }
+    ,
+    {
+      "id": "sqlite-sqlalchemy",
+      "title": "Persistent Data with SQLite & SQLAlchemy",
+      "description": "SQLite와 SQLAlchemy를 사용하여 영구 저장과 ORM 기반 CRUD를 구현합니다.",
+      "path": "assignments/sqlite-sqlalchemy",
+      "dueDate": "2026-08-15",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter_code.py",
+          "type": "python"
+        },
+        {
+          "name": "Requirements",
+          "file": "requirements.txt",
+          "type": "text"
+        }
+      ]
+    }
   ]
 }
